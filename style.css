@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+    --colorDark1: #112D4E;
+    --colorDark2: #3F72AF;
+    --colorLight1: #DBE2EF;
+    --colorLight2: #F9F7F7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    text-align: center;
+    background: #112d4e;
+    background-image: linear-gradient(160deg, #112d4e 0%, #3f72af 100%);
+    color: var(--colorLight2);
+    overflow-x: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+#title {
+    margin-top: 2rem;
+    letter-spacing: 1.75px;
+    word-spacing: 2px;
+}
+
+.weather-tabs {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 4rem;
+    max-width: 550px;    
+}
+
+.tab {
+    cursor: pointer;
+    font-size: 0.875rem;
+    letter-spacing: 1.75px;
+    padding: 5px 8px;
+    color: var(--colorLight2);
+    border: none;
+    background: transparent;
+}
+
+.tab.current-tab {
+    border-radius: 4px;
+    background-color: rgba(219, 226, 239, 0.5);
+}
+
+.weatherData {
+    margin-block: 4rem;
+}
+
+#search {
+    display: none;
+    /* display: flex; */
+    width: 90%;
+    max-width: 550px;
+    gap: 0 10px;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+    justify-content: center;
+    align-items: center;
+}
+
+#searchWeatherInput {
+    all: unset;
+    text-align: left;
+    width: calc(100% - 80px);
+    height: 40px;
+    padding: 0 20px;
+    background-color: rgba(219, 226, 239, 0.5);
+    border-radius: 10px;
+}
+
+#searchWeatherBtn {
+    all: unset;
+    font-size: 1.35rem;
+    text-transform: uppercase;
+    border-radius: 100%;
+    cursor: pointer;
+    background-color: var(--colorDark2);
+    width: 40px;
+    height: 40px;
+}
+
+.parameter-container {
+    display: flex;
+    width: 90%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+
+.parameter {
+    width: 200px;
+    height: 154px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+}

@@ -65,6 +65,12 @@
 
 .weatherData {
     margin-block: 4rem;
+    display: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.875rem 0;
 }
 
 #search {
@@ -117,5 +123,88 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-transform: uppercase;
+    border-radius: 4px;
+    background-color: rgba(219, 226, 239, 0.5);
+    gap: 5px 0;
 }
+
+.parameter h4 {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 100;
+}
+
+.parameter p {
+    font-size: 1.5rem;
+    font-weight: 100;
+}
+
+#grantAccess {
+    display: none;
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+}
+
+#grantAccess h3 {
+    font-size: 1.75rem;
+    margin-top: 30px;
+}
+
+#grantAccess p {
+    font-size: 0.95rem;
+    color: var(--colorLight1);
+    margin-top: 10px;
+}
+
+#grantAccessBtn {
+    all: unset;
+    padding: 10px 30px;
+    margin-top: 25px;
+    border-radius: 5px;
+    background-color: var(--colorDark2);
+    text-transform: uppercase;
+    font-size: small;
+    cursor: pointer;
+}
+
+#loaderImg {
+    /* display: none; */
+    display: block;
+    margin: 0 auto;
+}
+
+#cityAndFlag {
+    display: flex;
+    gap: 0 10px;
+    align-items: center;
+}
+
+#cityAndFlag p {
+    font-size: 2rem;
+}
+
+#cityAndFlag img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+#description {
+    font-size: 1.5rem;
+    font-weight: 100;
+}
+
+#descImg {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+#tempData {
+    font-size: 2.5rem;
+}
+
+

@@ -23,18 +23,19 @@
                 <button class="tab">Search Weather</button>
             </div>
 
+            <!-- Grant location access -->
+            <div id="grantAccess">
+                <img src="./assets/location.png" width="80"/>
+                <h3>Grant Location Access</h3>
+                <p>Allow Access To Get Weather Information</p>
+                <button id="grantAccessBtn">Grant Access</button>
+            </div>
+
+            <!-- Loader -->
+            <img src="assets/loading.gif" width="200" id="loaderImg"/>
             
             <!-- Data From API -->
             <div class="weatherData">
-
-                <!-- Grant location access -->
-                <div id="grantAccess">
-                    <img src="./assets/location.png" width="80"/>
-                    <h3>Grant Location Access</h3>
-                    <p>Allow Access To Get Weather Information</p>
-                    <button id="grantAccessBtn">Grant Access</button>
-                </div>
-
 
                 <!-- Search input and button for search weather section -->
                 <div id="search">
@@ -45,8 +46,8 @@
                 </div>
 
                 <!-- City name and country flag -->
-                <div>
-                    <h3 id="city"></h3>
+                <div id="cityAndFlag">
+                    <p id="city"></p>
                     <img src="" id="flag"/>
                 </div>
 
@@ -62,23 +63,23 @@
 
                     <!-- WindSpeed -->
                     <div class="parameter">
-                        <img src="./assets/wind.png" id="windImg" width="60"/>
+                        <img src="./assets/wind.png" id="windImg" width="50"/>
                         <h4 class="parameterText">windspeed</h4>
-                        <p class="parameterData"></p>
+                        <p class="parameterData" data-windspeed></p>
                     </div>
 
                     <!-- Humidity -->
                     <div class="parameter">
-                        <img src="./assets/humidity.png" id="humidityImg" width="60"/>
+                        <img src="./assets/humidity.png" id="humidityImg" width="50"/>
                         <h4 class="parameterText">humidity</h4>
-                        <p class="parameterData"></p>
+                        <p class="parameterData" data-humidity></p>
                     </div>
 
                     <!-- Clouds -->
                     <div class="parameter">
-                        <img src="./assets/cloud.png" id="cloudsImg" width="60"/>
+                        <img src="./assets/cloud.png" id="cloudsImg" width="50"/>
                         <h4 class="parameterText">clouds</h4>
-                        <p class="parameterData"></p>
+                        <p class="parameterData" data-clouds></p>
                     </div>
                 </div>
 

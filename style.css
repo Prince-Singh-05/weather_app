@@ -14,12 +14,9 @@
     font-family: 'Merriweather Sans', sans-serif;
 }
 
-.wrapper {
+body {
     width: 100vw;
     height: 100vh;
-    display: flex;
-    /* flex-direction: column; */
-    justify-content: center;
     text-align: center;
     background: #112d4e;
     background-image: linear-gradient(160deg, #112d4e 0%, #3f72af 100%);
@@ -27,10 +24,12 @@
     overflow-x: hidden;
 }
 
-.container {
+.wrapper {
+    width: 100%;
+    height: 100%;   
     display: flex;
     flex-direction: column;
-    width: 90%;
+    /* justify-content: center; */
 }
 
 #title {
@@ -55,7 +54,6 @@
     padding: 5px 8px;
     color: var(--colorLight2);
     border: none;
-    background: transparent;
 }
 
 .tab.current-tab {
@@ -63,26 +61,39 @@
     background-color: rgba(219, 226, 239, 0.5);
 }
 
-.weatherData {
+.User-Weather-Data {
     margin-block: 4rem;
     display: none;
+    /* display: flex; */
+    /* flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.875rem 0; */
+}
+
+.User-Weather-Data.active {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 0.875rem 0;
+    margin-block: 4rem;
 }
 
-#search {
+.search {
     display: none;
     /* display: flex; */
     width: 90%;
     max-width: 550px;
     gap: 0 10px;
-    margin: 0 auto;
+    margin: 4rem auto;
     margin-bottom: 3rem;
     justify-content: center;
     align-items: center;
+}
+
+.search.active {
+    display: flex;
 }
 
 #searchWeatherInput {
@@ -95,6 +106,14 @@
     border-radius: 10px;
 }
 
+#searchWeatherInput:focus {
+    outline: 3px solid rgba(255, 255, 255, 0.7);
+}
+
+#searchWeatherInput::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
 #searchWeatherBtn {
     all: unset;
     font-size: 1.35rem;
@@ -104,6 +123,10 @@
     background-color: var(--colorDark2);
     width: 40px;
     height: 40px;
+}
+
+#searchWeatherBtn img {
+    object-fit: contain;
 }
 
 .parameter-container {
@@ -139,21 +162,29 @@
     font-weight: 100;
 }
 
-#grantAccess {
+.grantAccess {
     display: none;
     /* display: flex; */
+    /* flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem; */
+}
+
+.grantAccess.active {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-top: 4rem;
 }
 
-#grantAccess h3 {
+.grantAccess h3 {
     font-size: 1.75rem;
     margin-top: 30px;
 }
 
-#grantAccess p {
+.grantAccess p {
     font-size: 0.95rem;
     color: var(--colorLight1);
     margin-top: 10px;
@@ -170,10 +201,37 @@
     cursor: pointer;
 }
 
-#loaderImg {
-    /* display: none; */
+.loader-container {
+    display: none;
+}
+
+.loader-container.active {
     display: block;
     margin: 0 auto;
+}
+
+.loader-container p {
+    text-transform: uppercase;
+}
+
+.api-error-container {
+    display: none;
+}
+
+.api-error-container.active {
+    display: flex;
+    gap: 1rem 0;
+}
+
+.api-error-container p {
+    text-align: center;
+}
+
+.api-error-container img {
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
 }
 
 #cityAndFlag {

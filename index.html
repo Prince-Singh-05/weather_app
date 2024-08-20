@@ -1,94 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WEATHER APP</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 </head>
+
 <body>
-    
     <div class="wrapper">
+        <!-- Title -->
+        <h1 id="title">WEATHER APP</h1>
 
-        <div class="container">
+        <!-- Weather Tabs -->
+        <div class="weather-tabs">
+            <p class="tab" data-userWeather>Your Weather</p>
+            <p class="tab" data-searchWeather>Search Weather</p>
+        </div>
 
-            <!-- Title -->
-            <h1 id="title">WEATHER APP</h1>
-
-            <!-- Weather Tabs -->
-            <div class="weather-tabs">
-                <button class="tab current-tab">Your Weather</button>
-                <button class="tab">Search Weather</button>
-            </div>
-
+        <div class="weather-container">
             <!-- Grant location access -->
-            <div id="grantAccess">
-                <img src="./assets/location.png" width="80"/>
+            <div class="grantAccess">
+                <img src="./assets/location.png" width="80" loading="lazy" />
                 <h3>Grant Location Access</h3>
-                <p>Allow Access To Get Weather Information</p>
+                <p data-messageText>Allow Access To Get Weather Information</p>
                 <button id="grantAccessBtn">Grant Access</button>
             </div>
 
+            
+            <!-- Search input and button for search weather section -->
+            <div class="search">
+                <input type="text" id="searchWeatherInput" placeholder="Search for city..." />
+                <button id="searchWeatherBtn">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+            </div>
+            
             <!-- Loader -->
-            <img src="assets/loading.gif" width="200" id="loaderImg"/>
+            <div class="loader-container">
+                <img src="assets/loading.gif" width="150" height="150" id="loaderImg" />
+                <p>Loading</p>
+            </div>
             
             <!-- Data From API -->
-            <div class="weatherData">
-
-                <!-- Search input and button for search weather section -->
-                <div id="search">
-                    <input type="text" id="searchWeatherInput" placeholder="Search for city...">
-                    <button id="searchWeatherBtn">
-                        <i class="fa fa-search" aria-hidden="true"></i>
-                    </button>
-                </div>
-
+            <div class="User-Weather-Data">
                 <!-- City name and country flag -->
                 <div id="cityAndFlag">
                     <p id="city"></p>
-                    <img src="" id="flag"/>
+                    <img src="" id="flag" />
                 </div>
 
                 <!-- weather description and icon -->
                 <p id="description"></p>
-                <img src="" id="descImg">
+                <img id="descImg" />
 
                 <!-- Temperature -->
                 <h2 id="tempData"></h2>
 
-                <!-- Additional Data -->
+                <!-- Additional Prarmeters -->
                 <div class="parameter-container">
-
                     <!-- WindSpeed -->
                     <div class="parameter">
-                        <img src="./assets/wind.png" id="windImg" width="50"/>
+                        <img src="./assets/wind.png" id="windImg" width="50" />
                         <h4 class="parameterText">windspeed</h4>
                         <p class="parameterData" data-windspeed></p>
                     </div>
 
                     <!-- Humidity -->
                     <div class="parameter">
-                        <img src="./assets/humidity.png" id="humidityImg" width="50"/>
+                        <img src="./assets/humidity.png" id="humidityImg" width="50" />
                         <h4 class="parameterText">humidity</h4>
                         <p class="parameterData" data-humidity></p>
                     </div>
 
                     <!-- Clouds -->
                     <div class="parameter">
-                        <img src="./assets/cloud.png" id="cloudsImg" width="50"/>
+                        <img src="./assets/cloud.png" id="cloudsImg" width="50" />
                         <h4 class="parameterText">clouds</h4>
                         <p class="parameterData" data-clouds></p>
                     </div>
                 </div>
-
             </div>
-
         </div>
 
+        <div class="api-error-container">
+            <img src="./assets/not-found.png" data-notfoundimg />
+            <p data-apierrortext=""></p>
+            <button class="btn" data-apierrorbtn="">Retry</button>
+        </div>
     </div>
 
     <script src="app.js"></script>
 </body>
+
 </html>
